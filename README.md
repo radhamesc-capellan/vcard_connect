@@ -54,6 +54,7 @@ vcard_connect_project/
 📝 **`src/data/landingPageData.ts`**
 
 Este archivo contiene:
+
 - Textos de todas las secciones
 - Información de la empresa
 - Metadatos SEO
@@ -91,7 +92,8 @@ features: {
 ## 🛠️ Instalación y Desarrollo
 
 ### Requisitos Previos
-- Node.js 18+ 
+
+- Node.js 18+
 - npm o yarn
 
 ### Instalación
@@ -134,82 +136,6 @@ npm run start
 yarn start
 ```
 
-## 🌐 Despliegue en AWS Amplify
-
-### Opción 1: Usando la Consola de AWS Amplify
-
-1. **Conecta tu repositorio:**
-   - Ve a [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
-   - Haz clic en "New app" → "Host web app"
-   - Conecta tu repositorio de GitHub/GitLab/Bitbucket
-
-2. **Configura el build:**
-   - AWS Amplify detectará automáticamente Next.js
-   - Verifica la configuración de build:
-   
-   ```yaml
-   version: 1
-   frontend:
-     phases:
-       preBuild:
-         commands:
-           - npm ci
-       build:
-         commands:
-           - npm run build
-     artifacts:
-       baseDirectory: out
-       files:
-         - '**/*'
-     cache:
-       paths:
-         - node_modules/**/*
-   ```
-
-3. **Despliega:**
-   - Haz clic en "Save and deploy"
-   - Amplify construirá y desplegará tu app automáticamente
-
-### Opción 2: Usando Amplify CLI
-
-```bash
-# Instalar Amplify CLI
-npm install -g @aws-amplify/cli
-
-# Configurar Amplify
-amplify configure
-
-# Inicializar proyecto
-amplify init
-
-# Publicar
-amplify publish
-```
-
-## 🔌 Configurar Backend API
-
-El formulario de contacto envía datos a tu backend FastAPI. Configura la URL en:
-
-```typescript
-// src/data/landingPageData.ts
-api: {
-  contactEndpoint: "https://api.vcardconnect.com/contact-messages",
-}
-```
-
-### Endpoint Esperado
-
-El backend debe tener un endpoint POST que acepte:
-
-```json
-{
-  "name": "string",
-  "email": "string",
-  "message": "string",
-  "timestamp": "ISO 8601 string"
-}
-```
-
 ## 📱 Responsive Breakpoints
 
 La landing usa los breakpoints estándar de Tailwind:
@@ -219,50 +145,6 @@ La landing usa los breakpoints estándar de Tailwind:
 - **lg:** 1024px
 - **xl:** 1280px
 - **2xl:** 1536px
-
-## 🎨 Personalización de Colores
-
-Los colores se definen en `tailwind.config.ts`:
-
-```typescript
-colors: {
-  primary: { /* azul */ },
-  secondary: { /* púrpura */ },
-}
-```
-
-## 📊 SEO
-
-Los metadatos SEO se configuran en `src/data/landingPageData.ts`:
-
-```typescript
-seo: {
-  title: "Tu título SEO",
-  description: "Tu descripción SEO",
-  keywords: ["palabra1", "palabra2"],
-  ogImage: "/og-image.jpg",
-}
-```
-
-Asegúrate de incluir:
-- ✅ `favicon.ico` en `/public/`
-- ✅ `og-image.jpg` en `/public/` (1200x630px recomendado)
-- ✅ `logo.svg` en `/public/`
-
-## 🚨 Notas Importantes
-
-1. **API Route**: El formulario usa un API Route (`/api/contact`) que actúa como proxy al backend FastAPI. Esto evita problemas de CORS.
-
-2. **Imágenes**: Para usar `next/image` con export estático, las imágenes deben estar optimizadas manualmente o usar `unoptimized: true`.
-
-3. **Variables de Entorno**: Si necesitas variables de entorno, créalas en `.env.local`:
-   ```
-   NEXT_PUBLIC_API_URL=https://api.vcardconnect.com
-   ```
-
-4. **Client vs Server Components**: 
-   - `Navbar` y `ContactSection` son Client Components (usan `'use client'`)
-   - El resto son Server Components por defecto
 
 ## 📝 Licencia
 
