@@ -30,7 +30,14 @@ export const metadata: Metadata = {
     images: [landingPageData.seo.ogImage],
   },
   icons: {
-    icon: "/favicon.ico",
+    // Provide multiple icon entries (ICO + explicit PNG sizes) to improve
+    // cross-browser compatibility and allow a cache-bust query when needed.
+    icon: [
+      { url: "/favicon.ico?v=3" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 

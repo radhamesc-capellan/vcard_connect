@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { landingPageData } from '@/data/landingPageData';
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { landingPageData } from "@/data/landingPageData";
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,11 +16,27 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
+          {/*
           <div className="flex-shrink-0">
             <Link href="#hero" className="flex items-center space-x-2">
               <span className="text-2xl font-bold text-primary-600">
                 {company.name}
               </span>
+            </Link>
+          </div>
+          */}
+
+          <div className="flex-shrink-0">
+            <Link href="#hero" className="flex items-center">
+              {/* usa Image para optimización; el archivo debe estar en /public/vc-logo.png */}
+              <Image
+                src="/vc-logo.png"
+                alt={`${company.name} logo`}
+                width={224}
+                height={56}
+                // aumentar visualmente el logo sin cambiar la altura del navbar (h-16)
+                className="h-14 w-auto object-contain"
+              />
             </Link>
           </div>
 
