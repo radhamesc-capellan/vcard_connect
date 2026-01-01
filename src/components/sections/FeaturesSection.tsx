@@ -1,5 +1,5 @@
-import React from 'react';
-import { landingPageData } from '@/data/landingPageData';
+import React from "react";
+import { landingPageData } from "@/data/landingPageData";
 
 export const FeaturesSection: React.FC = () => {
   const { features } = landingPageData;
@@ -22,19 +22,24 @@ export const FeaturesSection: React.FC = () => {
           {features.items.map((feature, index) => (
             <div
               key={feature.id}
-              className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-fade-in border border-gray-100"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`
+                p-8 rounded-xl border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300 bg-white group
+                ${
+                  index === 0 || index === 3
+                    ? "md:col-span-2 lg:col-span-2 bg-gradient-to-br from-white to-primary-50"
+                    : ""
+                }
+              `}
             >
-              {/* Ícono */}
-              <div className="text-5xl mb-4">{feature.icon}</div>
-
-              {/* Título */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div className="w-14 h-14 bg-primary-50 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300 shadow-sm text-primary-600">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-tight group-hover:text-primary-600 transition-colors">
                 {feature.title}
               </h3>
-
-              {/* Descripción */}
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
