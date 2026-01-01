@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/Button';
-import { landingPageData } from '@/data/landingPageData';
+import React, { useState } from "react";
+import { Button } from "@/components/ui/Button";
+import { landingPageData } from "@/data/landingPageData";
 
 interface FormData {
   name: string;
@@ -11,22 +11,22 @@ interface FormData {
 }
 
 interface FormState {
-  status: 'idle' | 'loading' | 'success' | 'error';
+  status: "idle" | "loading" | "success" | "error";
   message: string;
 }
 
 export const ContactSection: React.FC = () => {
   const { contact } = landingPageData;
-  
+
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [formState, setFormState] = useState<FormState>({
-    status: 'idle',
-    message: '',
+    status: "idle",
+    message: "",
   });
 
   const handleChange = (
@@ -38,33 +38,35 @@ export const ContactSection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormState({ status: 'loading', message: '' });
+    setFormState({ status: "loading", message: "" });
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      // Usar directamente el endpoint de AWS (definido en landingPageData)
+      // para evitar el error 404 en exports estáticos que no soportan API Routes de Next.js
+      const response = await fetch(landingPageData.api.contactEndpoint, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setFormState({
-          status: 'success',
+          status: "success",
           message: contact.form.successMessage,
         });
         // Limpiar formulario
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: "", email: "", message: "" });
       } else {
         setFormState({
-          status: 'error',
+          status: "error",
           message: contact.form.errorMessage,
         });
       }
     } catch {
       setFormState({
-        status: 'error',
+        status: "error",
         message: contact.form.errorMessage,
       });
     }
@@ -89,7 +91,7 @@ export const ContactSection: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Información de Contacto
             </h3>
-            
+
             <div className="space-y-4">
               {/* Email */}
               <div className="flex items-start">
@@ -138,7 +140,9 @@ export const ContactSection: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 font-medium">Teléfono</p>
+                    <p className="text-sm text-gray-600 font-medium">
+                      Teléfono
+                    </p>
                     <a
                       href={`tel:${contact.contactInfo.phone}`}
                       className="text-lg text-primary-600 hover:text-primary-700"
@@ -174,7 +178,9 @@ export const ContactSection: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 font-medium">Dirección</p>
+                    <p className="text-sm text-gray-600 font-medium">
+                      Dirección
+                    </p>
                     <p className="text-lg text-gray-700">
                       {contact.contactInfo.address}
                     </p>
@@ -248,13 +254,13 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {/* Mensajes de estado */}
-              {formState.status === 'success' && (
+              {formState.status === "success" && (
                 <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
                   {formState.message}
                 </div>
               )}
 
-              {formState.status === 'error' && (
+              {formState.status === "error" && (
                 <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
                   {formState.message}
                 </div>
@@ -266,9 +272,9 @@ export const ContactSection: React.FC = () => {
                 variant="primary"
                 size="lg"
                 className="w-full"
-                disabled={formState.status === 'loading'}
+                disabled={formState.status === "loading"}
               >
-                {formState.status === 'loading'
+                {formState.status === "loading"
                   ? contact.form.sendingButton
                   : contact.form.submitButton}
               </Button>
