@@ -416,8 +416,8 @@ export const landingPageData: LandingPageData = {
   },
 
   api: {
-    // URL de tu backend FastAPI para el formulario de contacto
-    contactEndpoint: "https://api.vcardconnect.com/contact-messages",
-    // Durante desarrollo, puedes usar: "http://localhost:8000/contact-messages"
+    // URL de tu backend Serverless (AWS Lambda + API Gateway / Free Tier)
+    contactEndpoint:
+      "https://um63dukma1.execute-api.eu-central-1.amazonaws.com/default/vcard-contact-form",
   },
 };
