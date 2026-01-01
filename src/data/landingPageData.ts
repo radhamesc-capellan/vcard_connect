@@ -47,6 +47,15 @@ export interface ContactFormLabels {
   errorMessage: string;
 }
 
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  content: string;
+  avatar: string; // URL de la imagen o iniciales si no hay imagen
+  rating: number;
+}
+
 export interface LandingPageData {
   // Información de la empresa
   company: {
@@ -99,6 +108,13 @@ export interface LandingPageData {
     sectionTitle: string;
     sectionSubtitle: string;
     items: Feature[];
+  };
+
+  // Testimonials Section
+  testimonials: {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    items: Testimonial[];
   };
 
   // Pricing Section
@@ -242,6 +258,41 @@ export const landingPageData: LandingPageData = {
         description:
           "Networking sin papel. Visualiza tu huella ecológica positiva y gamifica tu ahorro de CO2 y árboles.",
         icon: "🌱",
+      },
+    ],
+  },
+
+  testimonials: {
+    sectionTitle: "Confianza que se Comparte",
+    sectionSubtitle:
+      "Descubre por qué miles de profesionales están digitalizando sus tarjetas con nosotros.",
+    items: [
+      {
+        id: "t1",
+        name: "Carlos Mendoza",
+        role: "Director de Ventas, TechFlow",
+        content:
+          "Desde que uso vCard Connect, las reuniones con clientes son más fluidas. Escanean mi QR y quedo guardado en su agenda al instante. ¡La función de Wallet es un éxito!",
+        avatar: "CM",
+        rating: 5,
+      },
+      {
+        id: "t2",
+        name: "Ana Sofía Ruiz",
+        role: "Consultora de Marketing",
+        content:
+          "El modo oscuro automático y el diseño limpio me encantan. Refleja perfectamente mi marca personal. Además, ver las estadísticas de quién visita mi perfil es súper útil.",
+        avatar: "AR",
+        rating: 5,
+      },
+      {
+        id: "t3",
+        name: "Javier Vargas",
+        role: "Freelance Developer",
+        content:
+          "Lo mejor es la PWA. No tengo que descargar nada pesado y puedo editar mis datos en segundos. Ahorro papel y me veo mucho más profesional.",
+        avatar: "JV",
+        rating: 5,
       },
     ],
   },
