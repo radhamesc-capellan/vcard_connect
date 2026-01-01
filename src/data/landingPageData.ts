@@ -139,16 +139,17 @@ export const landingPageData: LandingPageData = {
   },
 
   seo: {
-    title: "vCard Connect - Tarjetas de Presentación Digitales Inteligentes",
+    title: "vCard Connect - Tu Tarjeta Digital Premium & PWA",
     description:
-      "Comparte tu información de contacto de forma moderna y profesional con vCard Connect. Crea tarjetas digitales personalizadas, QR codes y más.",
+      "No es solo una web. Es tu App personal. Carga al instante, funciona offline y se integra nativamente en Apple Wallet y Google Wallet.",
     keywords: [
       "vcard",
+      "pwa",
+      "apple wallet",
+      "google wallet",
       "tarjeta digital",
-      "tarjeta de presentación",
-      "contacto digital",
       "networking",
-      "QR code",
+      "nfc",
       "business card",
     ],
     ogImage: "/og-image.svg", // Imagen para compartir en redes sociales
@@ -157,95 +158,95 @@ export const landingPageData: LandingPageData = {
   navigation: {
     links: [
       { label: "Inicio", href: "#hero" },
-      { label: "Características", href: "#features" },
+      { label: "Experiencia App", href: "#features" },
       { label: "Precios", href: "#pricing" },
       { label: "Contacto", href: "#contact" },
     ],
   },
 
   hero: {
-    title: "Tu Tarjeta de Presentación Digital",
-    subtitle: "Siempre Contigo, Siempre Actualizada",
+    title: "No es solo una Tarjeta. Es tu App Personal.",
+    subtitle: "Instalable. Rápida. Integrada en tu Wallet.",
     description:
-      "Olvídate de las tarjetas de papel. Con vCard Connect, comparte tu información de contacto de forma instantánea mediante códigos QR, links personalizados o NFC.",
+      "Vende tu imagen profesional con una Web App Progresiva (PWA) que tus clientes pueden instalar. Guárdala en Apple Wallet o Google Wallet y comparte con un solo toque.",
     ctaPrimary: {
-      text: "Comenzar Gratis",
+      text: "Crear mi PWA Gratis",
       href: "#contact",
     },
     ctaSecondary: {
-      text: "Ver Características",
+      text: "Ver Demo en Vivo",
       href: "#features",
     },
     image: "/hero-image.svg", // Coloca una imagen hero en /public/
-    imageAlt: "Persona usando vCard Connect en su smartphone",
+    imageAlt: "vCard Connect corriendo como app nativa en iPhone y Android",
   },
 
   features: {
-    sectionTitle: "¿Por Qué Elegir vCard Connect?",
+    sectionTitle: "Tecnología que Impresiona",
     sectionSubtitle:
-      "Descubre las características que hacen de vCard Connect la mejor opción para tu networking profesional",
+      "Hemos traducido capacidades técnicas complejas en una experiencia de usuario fluida y premium.",
     items: [
       {
-        id: "feature-1",
-        title: "Tarjeta Digital Personalizable",
+        id: "feature-pwa",
+        title: "Experiencia App-Like (PWA)",
         description:
-          "Diseña tu tarjeta con tu estilo único. Añade tu foto, logo, colores corporativos y toda tu información de contacto.",
-        icon: "🎨",
-      },
-      {
-        id: "feature-2",
-        title: "Código QR Personalizado",
-        description:
-          "Genera un código QR único para compartir tu tarjeta al instante. Perfecto para eventos, reuniones y networking.",
+          "Se siente como una app nativa. Transiciones instantáneas, funciona offline y tus clientes pueden instalarla en su pantalla de inicio sin ir a la App Store.",
         icon: "📱",
       },
       {
-        id: "feature-3",
-        title: "Actualizaciones en Tiempo Real",
+        id: "feature-wallet",
+        title: "Apple & Google Wallet",
         description:
-          "¿Cambiaste de número o email? Actualiza tu información y todos tus contactos verán los cambios automáticamente.",
-        icon: "⚡",
+          "Lo llevas en tu bolsillo digital. Detectamos tu dispositivo y te ofrecemos guardar tu pase .pkpass directamente en tu billetera nativa.",
+        icon: "💳",
       },
       {
-        id: "feature-4",
-        title: "Análisis y Estadísticas",
+        id: "feature-design",
+        title: "Diseño Inteligente & Dark Mode",
         description:
-          "Conoce cuántas personas han visto tu tarjeta, guardado tu contacto y más. Toma decisiones basadas en datos.",
+          "Tu tarjeta se adapta. Detecta automáticamente si el móvil de tu cliente está en modo oscuro y ajusta los colores para una elegancia visual perfecta.",
+        icon: "🎨",
+      },
+      {
+        id: "feature-analytics",
+        title: "Inteligencia Visual",
+        description:
+          "Deja de adivinar. Mira gráficos interactivos de tus visitas por Ciudad, País y Tipo de Dispositivo (iPhone vs Android). Mide tu impacto real.",
         icon: "📊",
       },
       {
-        id: "feature-5",
-        title: "Compatible con NFC",
+        id: "feature-nfc",
+        title: "Intercambio Sin Fricción",
         description:
-          "Comparte tu tarjeta con solo acercar tu teléfono. Tecnología NFC para una experiencia sin fricciones.",
-        icon: "🔗",
+          "QR dinámicos de alta resolución y soporte NFC. Toca, comparte y conecta. Sin apps de terceros, sin esperas.",
+        icon: "⚡",
       },
       {
-        id: "feature-6",
-        title: "100% Ecológico",
+        id: "feature-eco",
+        title: "Impacto ESG Visible",
         description:
-          "Reduce tu huella de carbono. Sin papel, sin desperdicio. Networking sostenible y responsable con el planeta.",
+          "Sostenibilidad gamificada. Visualiza cuántos árboles has salvado y comparte tus logros ecológicos con tu red profesional.",
         icon: "🌱",
       },
     ],
   },
 
   pricing: {
-    sectionTitle: "Planes Diseñados Para Ti",
+    sectionTitle: "Inversión Inteligente",
     sectionSubtitle:
-      "Elige el plan que mejor se adapte a tus necesidades. Sin compromisos, cancela cuando quieras.",
+      "Desde una tarjeta personal gratuita hasta un ecosistema corporativo completo.",
     plans: [
       {
         id: "free",
         name: "Gratis",
         price: "$0",
         period: "para siempre",
-        description: "Perfecto para empezar y probar vCard Connect",
+        description: "Tu entrada al networking digital moderno.",
         features: [
-          "1 Tarjeta digital",
-          "Código QR básico",
-          "Actualizaciones ilimitadas",
-          "Estadísticas básicas",
+          "1 PWA Personal",
+          "QR dinámico básico",
+          "Modo Oscuro Automático",
+          "Estadísticas básicas (Vistas totales)",
           "Soporte por email",
         ],
         ctaText: "Comenzar Gratis",
@@ -256,15 +257,14 @@ export const landingPageData: LandingPageData = {
         name: "Profesional",
         price: "$9.99",
         period: "/mes",
-        description: "Ideal para profesionales y emprendedores",
+        description: "Para quien busca medir y optimizar su impacto.",
         features: [
-          "5 Tarjetas digitales",
-          "Códigos QR personalizados",
-          "Diseños premium",
-          "Análisis avanzados",
-          "Compatible con NFC",
-          "Integración con CRM",
-          "Soporte prioritario",
+          "5 PWAs Personalizadas",
+          "Integración Apple/Google Wallet",
+          "Analíticas Visuales (Mapas de calor, Dispositivos)",
+          "Diseños Premium & Personalización Total",
+          "Compatible con tarjetas NFC",
+          "Prioridad en soporte",
         ],
         highlighted: true,
         ctaText: "Prueba 14 Días Gratis",
@@ -275,15 +275,14 @@ export const landingPageData: LandingPageData = {
         name: "Empresarial",
         price: "$29.99",
         period: "/mes",
-        description: "Para equipos y empresas en crecimiento",
+        description: "Gestión centralizada para equipos de alto rendimiento.",
         features: [
           "Tarjetas ilimitadas",
-          "Gestión de equipo",
-          "Branding corporativo",
-          "API y webhooks",
-          "Análisis empresariales",
+          "Dashboard de Equipo y Roles",
+          "Branding Corporativo Lock",
+          "API y Webhooks para CRM",
+          "Reportes de ESG Corporativos",
           "Soporte dedicado 24/7",
-          "Onboarding personalizado",
           "SLA garantizado",
         ],
         ctaText: "Contactar Ventas",
@@ -293,20 +292,20 @@ export const landingPageData: LandingPageData = {
   },
 
   contact: {
-    sectionTitle: "¿Listo Para Comenzar?",
+    sectionTitle: "¿Listo Para Modernizarte?",
     sectionSubtitle:
-      "Contáctanos y descubre cómo vCard Connect puede transformar tu forma de hacer networking",
+      "Contáctanos y descubre cómo vCard Connect transforma simples contactos en conexiones de alto valor.",
     form: {
       nameLabel: "Nombre Completo",
-      namePlaceholder: "Jhon Doe",
-      emailLabel: "Correo Electrónico",
-      emailPlaceholder: "jhon@ejemplo.com",
+      namePlaceholder: "Tu nombre",
+      emailLabel: "Correo Profesional",
+      emailPlaceholder: "tu@empresa.com",
       messageLabel: "Mensaje",
-      messagePlaceholder: "Cuéntanos cómo podemos ayudarte...",
+      messagePlaceholder: "Me interesa para mi equipo de ventas...",
       submitButton: "Enviar Mensaje",
       sendingButton: "Enviando...",
       successMessage:
-        "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+        "¡Mensaje enviado! Un experto en networking digital te contactará pronto.",
       errorMessage:
         "Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.",
     },
@@ -319,7 +318,7 @@ export const landingPageData: LandingPageData = {
 
   footer: {
     aboutText:
-      "vCard Connect es la plataforma líder en tarjetas de presentación digitales. Conectamos profesionales de todo el mundo de forma moderna, eficiente y sostenible.",
+      "vCard Connect redefine el networking con tecnología PWA, Wallet y Analítica Visual. Conectamos profesionales de forma inteligente, rápida y sostenible.",
     socialLinks: [
       {
         name: "X",
