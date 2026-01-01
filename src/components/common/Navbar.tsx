@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/Button";
 import { landingPageData } from "@/data/landingPageData";
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { company, navigation } = landingPageData;
+  const { company, navigation, auth } = landingPageData;
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -51,6 +52,20 @@ export const Navbar: React.FC = () => {
                 {link.label}
               </Link>
             ))}
+
+            {/* Auth Buttons */}
+            <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-200">
+              <Link href={auth.loginUrl}>
+                <Button variant="outline" size="sm">
+                  {auth.loginText}
+                </Button>
+              </Link>
+              <Link href={auth.registerUrl}>
+                <Button variant="primary" size="sm">
+                  {auth.registerText}
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -107,6 +122,27 @@ export const Navbar: React.FC = () => {
                   {link.label}
                 </Link>
               ))}
+
+              <div className="border-t border-gray-100 pt-2 space-y-2">
+                <Link
+                  href={auth.loginUrl}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full"
+                >
+                  <Button variant="outline" className="w-full justify-start">
+                    {auth.loginText}
+                  </Button>
+                </Link>
+                <Link
+                  href={auth.registerUrl}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full"
+                >
+                  <Button variant="primary" className="w-full">
+                    {auth.registerText}
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         )}

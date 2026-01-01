@@ -69,6 +69,14 @@ export interface LandingPageData {
     links: NavLink[];
   };
 
+  // Autenticación
+  auth: {
+    loginUrl: string;
+    registerUrl: string;
+    loginText: string;
+    registerText: string;
+  };
+
   // Hero Section
   hero: {
     title: string;
@@ -164,6 +172,13 @@ export const landingPageData: LandingPageData = {
     ],
   },
 
+  auth: {
+    loginUrl: "https://vcard.radhames.dev/login",
+    registerUrl: "https://vcard.radhames.dev/register",
+    loginText: "Entrar",
+    registerText: "Crear Cuenta",
+  },
+
   hero: {
     title: "Tu Tarjeta de Presentación Digital. Reinventada.",
     subtitle: "Comparte sin límites. Gestiona desde nuestra App PWA.",
@@ -171,7 +186,7 @@ export const landingPageData: LandingPageData = {
       "La herramienta definitiva para profesionales. Crea tu tarjeta digital, guárdala en Apple o Google Wallet y usa nuestra Web App (PWA) para analizar tus visitas y actualizar tus datos en tiempo real.",
     ctaPrimary: {
       text: "Crear mi Tarjeta Gratis",
-      href: "#contact",
+      href: "https://vcard.radhames.dev/register",
     },
     ctaSecondary: {
       text: "Ver Demo",
@@ -250,7 +265,7 @@ export const landingPageData: LandingPageData = {
           "Estadísticas Básicas",
         ],
         ctaText: "Crear Ahora",
-        ctaLink: "#contact",
+        ctaLink: "https://vcard.radhames.dev/register",
       },
       {
         id: "pro",
@@ -268,7 +283,7 @@ export const landingPageData: LandingPageData = {
         ],
         highlighted: true,
         ctaText: "Prueba 14 Días Gratis",
-        ctaLink: "#contact",
+        ctaLink: "https://vcard.radhames.dev/register",
       },
       {
         id: "business",
