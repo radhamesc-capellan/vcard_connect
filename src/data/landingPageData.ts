@@ -375,7 +375,7 @@ export const landingPageData: LandingPageData = {
         "Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.",
     },
     contactInfo: {
-      email: "hola@vcardconnect.com",
+      email: "hola@radhames.dev",
       phone: "+34 612 345 678",
       address: "Calle Vitoria 3, Alcalá de Henares - Madrid, España",
     },
