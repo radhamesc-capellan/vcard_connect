@@ -208,7 +208,7 @@ export const landingPageData: LandingPageData = {
       text: "Ver Demo",
       href: "#features",
     },
-    image: "/hero-image.svg", // Coloca una imagen hero en /public/
+    image: "/phone_contact.png", // Coloca una imagen hero en /public/
     imageAlt: "Tarjeta Digital vCard Connect mostrada en un smartphone",
   },
 

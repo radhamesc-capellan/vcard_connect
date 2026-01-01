@@ -1,7 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
-import { landingPageData } from '@/data/landingPageData';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/Button";
+import { landingPageData } from "@/data/landingPageData";
 
 export const HeroSection: React.FC = () => {
   const { hero } = landingPageData;
@@ -43,15 +44,15 @@ export const HeroSection: React.FC = () => {
           {/* Imagen o ilustración */}
           <div className="flex justify-center lg:justify-end animate-fade-in">
             <div className="relative w-full max-w-lg">
-              {/* Placeholder de imagen - puedes reemplazar con next/image */}
-              <div className="aspect-square bg-gradient-to-br from-primary-400 to-secondary-400 rounded-3xl shadow-2xl flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <div className="text-8xl mb-4">📱</div>
-                  <p className="text-2xl font-bold">vCard Connect</p>
-                  <p className="text-lg opacity-90 mt-2">Tu red en un toque</p>
-                </div>
-              </div>
-              
+              <Image
+                src={hero.image}
+                alt={hero.imageAlt}
+                width={600}
+                height={600}
+                className="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                priority
+              />
+
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary-200 rounded-full opacity-50 blur-xl"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary-200 rounded-full opacity-50 blur-xl"></div>
