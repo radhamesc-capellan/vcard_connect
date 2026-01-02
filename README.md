@@ -1,5 +1,12 @@
 # vCard Connect - Landing Page
 
+> [!NOTE] > **Demo Live:** [https://vcard.radhames.dev](https://vcard.radhames.dev)
+
+> [!IMPORTANT] > **Test Credentials:**
+>
+> - **User:** `demo@example.com`
+> - **Password:** `Demo123!`
+
 Landing page moderna, responsiva y optimizada para SEO desarrollada con Next.js, TypeScript y Tailwind CSS.
 
 ## 🚀 Características
@@ -45,6 +52,19 @@ vcard_connect_project/
 ├── tsconfig.json                     # Configuración de TypeScript
 ├── next.config.mjs                   # Configuración de Next.js
 └── package.json                      # Dependencias del proyecto
+```
+
+## 🏗️ Arquitectura
+
+```mermaid
+graph TD
+    User([User]) -->|HTTPS| CF[CloudFront / CDN]
+    CF -->|Serve Static| S3[S3 Bucket (Frontend)]
+    User -->|API Calls| APIG[API Gateway]
+    APIG -->|Process| Lambda[AWS Lambda]
+    Lambda -->|Read/Write| DB[(DynamoDB)]
+    Lambda -->|Store Assets| S3Assets[S3 (Images)]
+    Lambda -->|Send Email| SES[AWS SES]
 ```
 
 ## 🎨 Editar Contenido
